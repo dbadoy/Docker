@@ -31,7 +31,7 @@ $ docker run <Option> <Container name> <Imagename> <shell>
 --expose="8080"
 
 --link=[] 컨테이너끼리 연결
---link="db:db"
+--link="db:db" ( 컨테이너 이름:별칭 )
 
 -p, --publish 컨테이너의 특정 포트 외부 노출
 -p 80:80  ( 호스트 포트:컨테이너 포트 )
