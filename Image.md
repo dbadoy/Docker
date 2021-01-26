@@ -10,19 +10,16 @@ $ docker pull <Image name>:<Tag>
 $ docker pul ubuntu:16.09  // or latest 
 
 Tag 생략시 latest 
- 
-
 ```
 ```
 $ docker images // image list
 
 -q, --quiet 이미지 ID만 표시 
-
 ```
 ```
 $ docker run <Option> <Container name> <Imagename> <shell>
 
--d 데몬몬드 / 백그라운드
+-d 데몬모드 / 백그라운드
 
 --device=[]:[] 
 --device="/home/user/myData:/home/data"  호스트 /home/user/myData 디렉터리를 컨테이너 /home/data 와 연결
@@ -46,7 +43,6 @@ $ docker run <Option> <Container name> <Imagename> <shell>
 
 $ docker run -i -t --name test ubuntu /bin/bash
 $ docker run -d -p 80:80 nginx:latest
-
 ```
 
 ```
