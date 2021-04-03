@@ -4,17 +4,33 @@ Docker Hub - https://hub.docker.com/
 ```
 $ docker search <Image name> // Docker Hub
 $ docker search ubuntu
+
+$ docker search -f "stars=3" hyperledger
+$ docker search --filter=stars=3 hyperledger
+// 필터링 [ stars (int) / is-automated (bool) / is-official (bool) ]
+$ docker search --limit=5 ubuntu
+// 결과 개수 지정 ( default = 25 )
 ```
 ```
 $ docker pull <Image name>:<Tag>
-$ docker pul ubuntu:16.09  // or latest 
+$ docker pull ubuntu:16.09  // or latest 
 
-Tag 생략시 latest 
+//Tag 생략시 latest 
+$ docker pull -a ubuntu
+// ubuntu 모든 태그 이미지 다운로드
 ```
 ```
-$ docker images // image list
+$ docker images
+$ docker image ls
 
--q, --quiet 이미지 ID만 표시 
+$ docker images -a 
+$ docker images --digests
+
+$ docker images -q
+// 이미지 ID만 표시 
+
+$ docker images --format "{{.ID}}: {{.Respository}}"
+// 선택 출력 
 ```
 ```
 $ docker run <Option> <Container name> <Imagename> <shell>
