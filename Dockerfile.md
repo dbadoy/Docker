@@ -37,7 +37,7 @@ ARG <key>=<value> // ENV와 유사하나, ARG는 Dockerfile에서만 사용 가�
 VOLUME <경로>     // 컨테이너에 외부파일시스템 연결
 ```
 
-## 예시 ( hyperledger/fabric/chaincode/Dokerfile ) 
+## 예시
 ```
 ARG GO_VER=1.14.2
 ARG ALPINE_VER=3.12
@@ -54,4 +54,4 @@ RUN go install -v ./...
 EXPOSE 999
 CMD ["chaincode-external"]
 ```
-```
+https://github.com/hyperledger/fabric-samples/tree/main/chaincode/fabcar/external
