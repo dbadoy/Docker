@@ -54,4 +54,4 @@ RUN go install -v ./...
 EXPOSE 999
 CMD ["chaincode-external"]
 ```
-https://github.com/hyperledger/fabric-samples/tree/main/chaincode/fabcar/external
+출처 : https://github.com/hyperledger/fabric-samples/blob/main/chaincode/fabcar/external/Dockerfile
