@@ -36,3 +36,22 @@ ENV <key>=<value> // RUN, CMD, ENTRYPOINT에서 사용할 환경 변수 지정 �
 ARG <key>=<value> // ENV와 유사하나, ARG는 Dockerfile에서만 사용 가능
 VOLUME <경로>     // 컨테이너에 외부파일시스템 연결
 ```
+
+예시 ( hyperledger/fabric/chaincode/Dokerfile ) 
+```
+ARG GO_VER=1.14.2
+ARG ALPINE_VER=3.12
+
+FROM golang:${GO_VER}-alpine${ALPINE_VER}
+
+WORKDIR /go/src/github.com/Hyperledger/fabric-samples/asset-transfer-basic/chaincode-external
+
+COPY ..
+
+RUN go get -d -v ./...
+RUN go install -v ./...
+
+EXPOSE 999
+CMD ["chaincode-external"]
+```
+```
